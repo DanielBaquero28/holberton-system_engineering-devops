@@ -1,2 +1,0 @@
-#!/bin/bash
-cat -n | grep -e  '*[[:digit:]]*[13579]\t' | cut -c 8 

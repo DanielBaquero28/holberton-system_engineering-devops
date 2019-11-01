@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Prints Holberton School ten times in a while loop
+count=1
+while [ $count -le 10 ]
+do
+    if [ $count -eq 9 ]
+    then
+	echo "Holberton School"
+	echo "Hi"
+    else
+	echo "Holberton School"
+    fi
+
+    ((count=count+1))
+done

@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+# Tells a story with the information provided in the fields of /etc/passwd file
+file="/etc/passwd"
+while IFS= read -r line
+do
+	temp=$line
+	username=$( echo "$temp" |cut -d: -f1 )
+	group_id=$( echo "$temp" |cut -d: -f4 )
+	home_directory=$( echo "$temp" |cut -d: -f6 )
+	command_shell=$( echo "$temp" |cut -d: -f7 )
+	users_id=$( echo "$temp" |cut -d: -f3 )
+	password=$( echo "$temp" |cut -d: -f2 )
+	user_id_info=$( echo "$temp" |cut -d: -f5 )
+
+	echo -n "The user $username"
+	echo -n " is part of the $group_id gang, "
+	echo -n "lives in $home_directory and rides $command_shell."
+	echo -n " $users_id"
+	echo -n "'s place is protected by the passcode $password, "
+	echo -n "more info about the user here: "
+	echo "$user_id_info"
+
+done < "$file"

@@ -2,5 +2,5 @@
 # Prints the list of all of the directories and files as ls
 for i in *;
 do
-    echo "$i"
+    echo "$i" | cut -d- -f2
 done

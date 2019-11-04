@@ -4,12 +4,12 @@
 
 start() {
     ./manage_my_process &
-    echo "$!" > /var/run/my_process.pid
+    echo "$!" > "/var/run/my_process.pid"
 }
 
 stop() {
-    pkill - SIGTERM -f "manage_my_process" &
-    rm -f /var/run/my_process.pid
+    sudo pkill -SIGTERM -f "manage_my_process" &&
+    rm -f "/var/run/my_process.pid"
 
 }
 

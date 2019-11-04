@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Handles signal SIGTERM
+sig_handle() {
+	     echo "I am invincible!!!"
+}
+trap sig_handle SIGTERM
+
+for (( ; ;))
+do
+    echo "To infinity and beyond"
+    sleep 2
+done

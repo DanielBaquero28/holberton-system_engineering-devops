@@ -8,7 +8,7 @@ start() {
 }
 
 stop() {
-    sudo pkill -SIGTERM -f "manage_my_process" &&
+    sudo kill -SIGTERM "$(cat "/var/run/my_process.pid")" &&
     rm -f "/var/run/my_process.pid"
 
 }

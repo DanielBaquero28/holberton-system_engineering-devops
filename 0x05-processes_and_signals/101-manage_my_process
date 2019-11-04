@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Handling signals in a more pro way.
-. /lib/lsb/init_functions
+. /lib/lsb/init-functions
 
 start() {
     ./manage_my_process &
@@ -8,7 +8,7 @@ start() {
 }
 
 stop() {
-    pkill -f "manage_my_process" &
+    pkill - SIGTERM -f "manage_my_process" &
     rm -f /var/run/my_process.pid
 
 }

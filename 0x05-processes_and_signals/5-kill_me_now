@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Kills an specific program
+kill -SIGTERM "$(pgrep -f 4-to_infinity_and_beyond)"

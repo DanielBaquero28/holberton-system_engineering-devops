@@ -14,22 +14,16 @@ int main(void)
 	int i;
 	pid_t pid;
 
-	pid = fork();
-
 	for (i = 1; i <= 5; i++)
 	{
+		pid = fork();
 		if (pid < 0)
+			fprintf(stderr, "Unsuccesful child creation process");
+		if (pid == 0)
 		{
-			perror("Unsuccesful to create child process");
-			exit(1);
+			printf("Zombie process created, PID:  %d\n", getpid());
+			return (0);
 		}
-		else if (pid == 0)
-		{
-			dprintf(1, "Zombie process created, PID:  %d\n", getpid());
-			return(0);
-		}
-		else
-			printf("Refers to the PPID");
 	}
 	to_infinity();
 	return (0);
@@ -37,13 +31,13 @@ int main(void)
 
 /**
  * to_infinity - "Infinte loop of sleeps"
- * Return: Nothing
+ * Return: 0
  **/
 
 int to_infinity(void)
 {
 	while (1)
-		sleep (1);
+		sleep(1);
 
 	return (0);
 }

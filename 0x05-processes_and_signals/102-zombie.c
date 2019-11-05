@@ -25,19 +25,20 @@ int main(void)
 			return (0);
 		}
 	}
-	to_infinity();
+	infinite_while();
 	return (0);
 }
 
 /**
- * to_infinity - "Infinte loop of sleeps"
+ * infinite_while - "Infinte loop of sleeps"
  * Return: 0
  **/
 
-int to_infinity(void)
+int infinite_while(void)
 {
 	while (1)
+	{
 		sleep(1);
-
+	}
 	return (0);
 }

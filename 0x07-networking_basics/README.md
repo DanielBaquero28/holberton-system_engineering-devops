@@ -97,5 +97,5 @@ Which statement is correct for the TCP worker:
 </body>
 <br>
 <br>
-<footer>Made by: <strong><a href=“https://github.com/DanielBaquero28”>Daniel Baquero</a></strong></footer>
+<footer>Made by: <a href=“https://github.com/DanielBaquero28”>Daniel Baquero</a></footer>
 </html>

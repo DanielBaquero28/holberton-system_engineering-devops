@@ -1,6 +1,6 @@
 <html>
 <h1>Project: Network Basics #0</h1>
-<p><strong>In this project we will understand the basics of networks. We will focus on the Transport layer and especially TCP/UDP, and on the Network layer with IP and ICMP.</st\rong></p>
+<p><strong>In this project we will understand the basics of networks. We will focus on the Transport layer and especially TCP/UDP, and on the Network layer with IP and ICMP.</strong></p>
 <body>
 <li>Task 0: Questions:
 <br>

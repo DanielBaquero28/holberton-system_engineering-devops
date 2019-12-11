@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Install nginx on remote server
+
+apt-get -y update
+apt-get -y install nginx
+
+sudo sed i '43 s/#//' etc /etc/nginx/sites-enabled/default
+echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/404_page.html
+sudo service nginx start

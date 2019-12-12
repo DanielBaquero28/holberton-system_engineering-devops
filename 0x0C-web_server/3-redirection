@@ -3,6 +3,6 @@
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo sed -i '26i rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-enabled/default
+sudo -i 
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-echo "Holberton School" > /usr/share/nginx/html/index.html
 sudo service nginx start

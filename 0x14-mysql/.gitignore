@@ -1,0 +1,3 @@
+# Ignoring backup file .tar.gz just in case
+backup.sql
+*.tar.gz

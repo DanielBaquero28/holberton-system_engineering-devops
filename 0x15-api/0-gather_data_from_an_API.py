@@ -8,13 +8,19 @@ import requests
 
 
 if __name__ == "__main__":
-    """ Main method  """
-    api_url = "https://jsonplaceholder.typicode.com/users/"
-    eplye_id = sys.argv[1]
-    todo_dict = requests.get(api_url + '{}/todos'.format(eplye_id)).json()
-    users_dict = requests.get(api_url + '{}'.format(eplye_id)).json()
-    completed_user = [x for x in todo_dict if x.get('completed') is True]
-    print("Employee {} is done with tasks({}/{}):".format(
-        users_dict.get("name"), len(completed_user), len(todo_dict)))
-    for y in completed_user:
-        print("\t {}".format(y.get("title")))
+    """ Main method """
+    api_url = "https://jsonplaceholder.typicode.com/"
+    users_dict = requests.get('{}users/{}'.format(api_url, sys.argv[1])).json()
+    print("Employee {} is done with tasks".format(users_dict.get('name')),
+          end="")
+
+    todo_dict = requests.get('{}todos?userId={}'.format(api_url,
+                                                        sys.argv[1])).json()
+    c_tasks = []
+    for task in todo_dict:
+        if task.get("completed") is True:
+            c_tasks.append(task)
+
+    print("({}/{}):".format(len(c_tasks), len(todo_dict)))
+    for task in c_tasks:
+        print("\t {}".format(task.get('title')))

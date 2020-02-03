@@ -1,2 +1,4 @@
-# Ignoring imported csv file
+# Ignoring exported csv file
 *.csv
+#Ignoring exported json file
+*.json
